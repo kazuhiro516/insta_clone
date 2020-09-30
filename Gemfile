@@ -57,3 +57,5 @@ gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
 gem 'devise'
 gem 'pg', group: :production
+gem 'carrierwave', '~> 2.0'
+gem "mini_magick"
