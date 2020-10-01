@@ -7,10 +7,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-md-auto align-items-center">
         <li>
-          <%= link_to "投稿", new_post_path, class: "btn btn-primary" %>
+          <%= link_to "", user_path(current_user), class: "nav-link commonNavIcon profile-icon" %>
         </li>
         <li>
-          <%= link_to "", user_path(current_user), class: "nav-link commonNavIcon profile-icon" %>
+          <%= link_to "新規投稿", new_post_path, class: "btn btn-primary" %>
+        </li>
+        <li>
+          <% if user_signed_in? %> 
+            <%= link_to "サインアウト", destroy_user_session_path, class: "btn btn-outline-secondary",method: :delete %>
+          <% end %>
         </li>
       </ul>
     </div>
