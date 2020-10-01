@@ -1,10 +1,9 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
-  had_many :likes,
+  has_many :likes
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   validates :name, presence: true, length: { maximum: 50 }
 
   # パスワードを入力せずにプロフィールを変更する
