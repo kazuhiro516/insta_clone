@@ -9,6 +9,11 @@
         <li>
           <%= link_to "", user_path(current_user), class: "nav-link commonNavIcon profile-icon" %>
         </li>
+        <% if user_signed_in? %> 
+          <li>
+            <%= link_to "全てのユーザー", users_path, class: "btn btn-outline-info" %>
+          </li>
+        <% end %>
         <li>
           <%= link_to "新規投稿", new_post_path, class: "btn btn-primary" %>
         </li>
