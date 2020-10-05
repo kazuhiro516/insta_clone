@@ -3,6 +3,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # ストロングパラメーターの追加
   before_action :configure_permitted_parameters, if: :devise_controller?
+  # 検索フォーム
+  before_action :set_search
+  
+  def set_search
+    @search = User.ransack(params[:q]) 
+    @search_users = @search.result(distinct: true)
+  end
 
   protected
 
