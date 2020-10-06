@@ -5,10 +5,10 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   # 検索フォーム
   before_action :set_search
-  
+
   def set_search
     @search = User.ransack(params[:q]) 
-    @search_users = @search.result(distinct: true)
+    @search_users = @search.result.page(params[:page])
   end
 
   protected
