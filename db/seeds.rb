@@ -1,4 +1,3 @@
-# メインのサンプルユーザーを1人作成する
 User.create!(name:  "Example User",
              email: "example@railstutorial.org",
              password:              "foobar",
@@ -14,3 +13,11 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+# フォロー、フォロワーのサンプル作成
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow!(followed) }
+followers.each { |follower| follower.follow!(user) }
