@@ -9,6 +9,9 @@
         <li>
           <%= link_to "", user_path(current_user), class: "nav-link commonNavIcon profile-icon" %>
         </li>
+        <li>
+          <%= link_to "通知",notifications_path , class: "btn btn-outline-warning" %>
+        </li>
         <li class="searchbox">
           <%= search_form_for @search, url: users_path do |f| %>
             <%= f.text_field :name_cont ,placeholder: '検索するユーザー名を入力...' %>
