@@ -1,3 +1,4 @@
+<% provide(:title, "新規登録") %>
 <div class="main">
   <div class="card devise-card">
     <div class="form-wrap">
@@ -22,13 +23,17 @@
           <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワードの確認", class: "form-control" %>
         </div>
 
-        <div class="actions">
+        <div class="actions mb-0">
           <%= f.submit "登録する", class: "btn btn-primary w-100" %>
         </div>
       <% end %>
 
       <br>
-
+      <p class="mb-0">
+        ご利用の前に一度
+        <%= link_to "規約", static_pages_terms_path %>
+        をご確認ください。
+      </p>
       <p class="devise-link">
         アカウントをお持ちですか？
         <%= link_to "サインインする", new_user_session_path %>

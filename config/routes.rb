@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'posts#index'
-  get '/users/:id', to: 'users#show', as: 'user'
-  get '/users', to: 'users#index'
+  get '/users/:id',          to: 'users#show', as: 'user'
+  get '/users',              to: 'users#index'
+  get '/static_pages/terms', to: 'static_pages#terms'
 
   resources :users do
     member do
