@@ -18,16 +18,11 @@
   font-size: 14px;
 }
 
-.setting {
-  background-image: image-url("parts4.png");
-  background-repeat: no-repeat;
-  height: 24px;
-  width: 24px;
-  background-color: transparent;
-  margin: 18px 0 0 10px;
-  background-size: 22px!important;
-  border: none;
-  &:hover {
-    cursor: pointer;
-  }
+.img{
+  display: flex;
+  flex-wrap: wrap;
+}
+.images{
+  width: 190px;
+  height: 190px;
 }

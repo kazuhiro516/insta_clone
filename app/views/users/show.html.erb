@@ -1,20 +1,28 @@
 <% provide(:title, "プロフィール") %>
 <div class="profile-wrap">
   <div class="row">
-    <div class="col-md-3 text-center">
+    <div class="col-md-4 text-center">
       <%= image_tag avatar_url(@user), class: "round-img" %>
       <div class="my-4"><%= render 'follow_form' %></div>
         <%= render 'stats' %>
     </div>
-    <div class="col-md-9">
-      <div class="row">
-        <h1><%= @user.name %></h1>
-          <% if @user == current_user %>
+    <div class="col-md-8">
+      <div class="container">
+        <div class="row ">
+          <h1><%= @user.name %></h1>
+            <% if @user == current_user %>
               <p><%= @user.email %></p>
-          <% end %>
-          <% if @user == current_user %>
-            <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" %>
-          <% end %>
+              <%= link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" %>
+            <% end %>
+          <h3>投稿数 <%= @user.posts.count %></h3>
+          <div class="img">
+            <% @post.each do |post| %>
+              <%= link_to(post_path(post)) do %>
+                <%= image_tag post.photos.first.image.url(:medium), class: "images" %>
+              <% end %>
+            <% end %>
+          </div>
+        </div> 
       </div>
     </div>
   </div>
