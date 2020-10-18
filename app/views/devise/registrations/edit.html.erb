@@ -26,6 +26,9 @@
 
           <%= f.submit "変更する", class: "btn btn-primary" %>
         <% end %>
+          <div class="delete-btn">
+            <%= link_to "アカウント削除","/users/#{@user}", class: "btn btn-outline-danger",method: :delete,data: {confirm: "本当に削除しますか?"} %>
+          </div>
       </div>
     </div>
   </div>

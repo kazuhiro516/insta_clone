@@ -10,6 +10,13 @@ class UsersController < ApplicationController
     @post = Post.where(user_id: params[:id])
   end
 
+  def destroy
+    @user = User.find(params[:id]) 
+    @user.destroy
+    flash[:success] = 'ユーザーを削除しました。'
+    redirect_to root_path
+  end
+
   def following
     @user  = User.find(params[:id])
     @users = @user.followings
