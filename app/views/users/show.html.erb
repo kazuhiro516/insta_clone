@@ -2,9 +2,14 @@
 <div class="profile-wrap">
   <div class="row">
     <div class="col-md-4 text-center">
-      <%= image_tag avatar_url(@user), class: "round-img" %>
-      <div class="my-4"><%= render 'follow_form' %></div>
+        <%= image_tag avatar_url(@user), class: "round-img" %>
+      <div class="my-4">
+        <%= render 'follow_form' %>
+      </div>
         <%= render 'stats' %>
+      <div class="my-4 border text-left">
+        <%= @user.introduction %>
+      </div>
     </div>
     <div class="col-md-8">
       <div class="container">

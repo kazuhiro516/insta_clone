@@ -24,6 +24,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
   validates :name, presence: true, length: { maximum: 50 }
+  validates :introduction, presence: false, length: { maximum: 160 }
   # フォロー機能
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)
@@ -46,7 +47,7 @@ class User < ApplicationRecord
       params.delete(:password_confirmation)
     end
 
-    result = update_attributes(params, *options)
+    result = update(params, *options)
     clean_up_passwords
     result
   end
