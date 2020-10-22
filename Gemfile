@@ -71,3 +71,4 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 gem 'kaminari'
 gem 'rails-i18n'
 gem 'google-analytics-rails', '1.1.1'
+gem 'meta-tags'
