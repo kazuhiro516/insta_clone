@@ -6,6 +6,14 @@ class ApplicationController < ActionController::Base
   # 検索フォーム
   before_action :set_search
 
+  def after_sign_in_path_for(resource) 
+    posts_path
+  end
+
+   def after_sign_out_path_for(resource)
+    root_path 
+  end
+
   def set_search
     @search = User.ransack(params[:q]) 
     @search_users = @search.result.page(params[:page])
