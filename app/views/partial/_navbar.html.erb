@@ -23,9 +23,9 @@
             <%= link_to "全てのユーザー", users_path, class: "btn btn-outline-info" %>
           </li>
         <% end %>
-        <li>
-          <%= link_to "新規投稿", new_post_path, class: "btn btn-primary" %>
-        </li>
+          <li>
+            <%= link_to "新規投稿", new_post_path, class: "btn btn-primary" %>
+          </li>
         <li>
           <% if user_signed_in? %> 
             <%= link_to "サインアウト", destroy_user_session_path, class: "btn btn-outline-secondary",method: :delete %>

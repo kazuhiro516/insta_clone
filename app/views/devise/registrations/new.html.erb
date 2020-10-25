@@ -4,7 +4,7 @@
     <div class="form-wrap">
       <div class="form-group text-center">
         <h2 class="mx-auto">InstaClone</h2>
-        <p class="text-secondary">友達の写真や動画をチェックしよう</p>
+        <p class="text-secondary">友達の写真やコメントをチェックしよう</p>
       </div>
       <%= form_with scope: resource, as: resource_name, url: registration_path(resource_name), local: true do |f| %>
         <div class="form-group">
@@ -29,6 +29,7 @@
       <% end %>
 
       <br>
+      
       <p class="mb-0">
         ご利用の前に一度
         <%= link_to "規約", static_pages_terms_path %>
